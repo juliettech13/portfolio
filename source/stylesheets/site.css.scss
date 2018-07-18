@@ -30,7 +30,7 @@ a {
   }
 }
 
-.hello h1{
+.heavy h1{
   font-family: "AvenirNextHeavy", "sans-serif";
   font-weight: bold;
   font-size: 80px;
@@ -38,6 +38,10 @@ a {
   strong{
     color: #1C819E
   }
+}
+
+.yellow {
+  color: #FFBE00;
 }
 
 .personal-info {
@@ -73,8 +77,6 @@ a {
     text-decoration: underline;
     text-decoration-color: #1C819E;
     text-decoration-style: wavy;
-    // cursor: pointer;
-    // color: black;
   }
 }
 
