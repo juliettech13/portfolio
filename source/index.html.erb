@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Juliette ch.</title>
+</head>
+<body>
+  <div class="container">
+    <div class="first-section">
+      <div class="hello">
+        <h1>HELLO STRANGER<strong>.</strong></h1>
+      </div>
+      <div class="personal-info">
+        <h3>My name is <strong>Juliette Chevalier.</strong> I’m a writer, web developer, and teacher at Le Wagon Coding bootcamp. </h3>
+      </div>
+      <div class="paragraphs">
+        <p>I was working for the multilateral Embassy of Panama to the United Nations in Geneva, when I got crazy frustrated about the slowness and inefficiency of the international governance system. That’s when I started researching technologies that would help accelerate the existing traditional processes, eventually leading me into a tech research spree. This new interest led to hours of coding tutorials online until I eventually decided to quit my job and enroll in <a href="https://www.lewagon.com" class="underline-yellow"> Le Wagon Berlin.</a> After graduation I had fallen so in love with coding that I was offered a job as a Teaching Assistant for the following batch, a job I have been doing alonside freelancing ever since around the world. </p>
+        <p>When I’m not <a href="https://github.com/juliettech13" class="underline-yellow">coding</a> in a café or <a href="https://medium.com/@juliettechevalier" class="underline-yellow">writing </a>my next Medium post, you can find me in an airport headed towards my next destination, reading a book or having some cold craft beers with friends.</p>
+      </div>
+    </div>
+
+    <div class="sections">
+      <ul>
+        <li>
+          <button onclick="scrollDown('WorkSection')" class="section-title">
+            <h3>WORK<span class="period">.    +</span></h3>
+          </button>
+          <div id="WorkSection" class="sections w3-hide">
+            <div class="section-ps">
+              <p><span class="bold">[2018] TEACHER & TA @ LE WAGON CODING BOOTCAMP. BERLIN (GERMANY), TEL AVIV (ISRAEL), BALI (INDONESIA), TOKYO (JAPAN) & MELBOURNE (AUSTRALIA).</span>
+              9-week intensive coding bootcamp teaching Ruby, SQL, Active Record, HTML, CSS, JavaScript & Ruby on Rails to creative people in 28 cities around the world.</p>
+
+              <p><span class="bold">[2018] FREELANCE WEB DEVELOPMENT</span>
+              Have taken on several projects while I’m not teaching, like a National Consultation Platform for the Nigerian Government, as well as redoing websites for companies in Panama and Paris, and personal projects of my own.</p>
+
+              <p> <span class="bold">[2016-2018] DIPLOMATIC ATTACHÉ @ PERMANENT MISSION OF PANAMA TO THE UNITED NATIONS. GENEVA (SWITZERLAND).</span>
+              Drafted, presented, and negotiated declarations on behalf of Panamanian government, mostly on refugee, migration, women, and environmental issues. I loved how much I was able to learn about how the world is run, but the bureaucracy of the system eventually led me to search for somewhere where I could have some more direct, effective impact.</p>
+
+              <p><span class="bold">[2014] COMMUNICATIONS COORDINATOR ASSISTANT @ MV EXPLORER. SEMESTER AT SEA</span>
+              Wrote, edited, and published articles on Semester at Sea’s blog, News from the Helm, while living on board a ship circumventing the globe (15 countries, 35+ cities).</p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <button onclick="scrollDown('EdSection')" class="section-title">
+          <h3>EDUCATION<span class="period">.   +</span></h3>
+        </button>
+        <div id="EdSection" class="sections w3-hide">
+          <div class="section-ps">
+              <p><span class="bold">[2018] LE WAGON FULL-STACK WEB DEVELOPMENT BOOTCAMP. BERLIN, GERMANY</span>
+              9-week intensive coding bootcamp learning HTML, CSS, Bootstrap, JavaScript ES2015, SQL, git, GitHub, Heroku and Ruby on Rails. Designed, implemented and shipped to production a clone of AirBnB and a Rails prototype of <a href="rookstars.eu" class="underline-yellow">Rookstars</a>, a platform that connects LeWagon alumni to NGOs looking to advance their digital brand, which I later <a href="https://www.lewagon.com/demoday/124/rookstars" class="underline-yellow">pitched</a> in front of 150+ people.</p>
+              <p><span class="bold">[2012-2016] LOYOLA UNIVERSITY CHICAGO. CHICAGO, USA</span>
+              B.A. Political Science, B.A. International Studies. Minors in Latin American Studies, Peace Studies, and History.</p>
+              <p><span class="bold">[2015] SEMESTER AT SEA. INSTITUTE OF SHIPBOARD EDUCATION- UNIVERSITY OF VIRGINA. MV EXPLORER</span>
+              Studied abroad living on a ship for four months which boarded in San Diego, California and visited Hawaii, Japan, China, Hong Kong, Vietnam, Cambodia, Singapore, Myanmar, India, South Africa, Namibia, Morocco, eventually landing in England. Hands-on learning experience regarding the geopolitical structure of the world, its history, and individual behaviors. While on board, took university credit courses studying Human Rights and Global Ethics, Politics of Developing Areas, Global Environmental Politics, and the New Scramble for Africa.</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <button onclick="scrollDown('CodeSection')" class="section-title">
+          <h3>CODE<span class="period">.   +</span></h3>
+        </button>
+        <div id="CodeSection" class="sections w3-hide">
+          <div class="cards">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                  <!-- insert <div class="card"> -->
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                  <!-- insert <div class="card"> -->
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                  <!-- insert <div class="card"> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+
+
+
+
+
+
+
+    <script>
+      function scrollDown(id) {
+        var x = document.getElementById(id);
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+        } else {
+          x.className = x.className.replace(" w3-show", "");
+        }
+      }
+    </script>
+  </div>
+</div>
+</body>
+</html>
