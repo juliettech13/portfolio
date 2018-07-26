@@ -52,15 +52,13 @@
             </button>
             <div id="EdSection" class="sections w3-hide">
               <div class="section-ps">
-                <p><span class="bold">[2018] LE WAGON FULL-STACK WEB DEVELOPMENT BOOTCAMP. BERLIN, GERMANY</span>
+                <p><a href="https://www.lewagon.com/" class="underline-yellow"><span class="bold">[2018] LE WAGON FULL-STACK WEB DEVELOPMENT BOOTCAMP. BERLIN, GERMANY</span></a>
                   9-week intensive coding bootcamp learning HTML, CSS, Bootstrap, JavaScript ES2015, SQL, git, GitHub, Heroku and Ruby on Rails. Designed, implemented and shipped to production a clone of AirBnB and a Rails prototype of <a href="rookstars.eu" target="_blank" class="underline-yellow">Rookstars</a>, a platform that connects LeWagon alumni to NGOs looking to advance their digital brand, which I later <a href="https://www.lewagon.com/demoday/124/rookstars" target="_blank" class="underline-yellow">pitched</a> in front of 150+ people.</p>
-                  <p><span class="bold">[2012-2016] LOYOLA UNIVERSITY CHICAGO. CHICAGO, USA</span>
+                  <p><a href="https://www.luc.edu/" class="underline-yellow"><span class="bold">[2012-2016] LOYOLA UNIVERSITY CHICAGO. CHICAGO, USA</span></a>
                   B.A. Political Science, B.A. International Studies. Minors in Latin American Studies, Peace Studies, and History.</p>
-                  <p><span class="bold">[2015] SEMESTER AT SEA. INSTITUTE OF SHIPBOARD EDUCATION- UNIVERSITY OF VIRGINA. MV EXPLORER</span>
-                  Studied abroad living on a ship for four months which boarded in San Diego, California and visited Hawaii, Japan, China, Hong Kong, Vietnam, Cambodia, Singapore, Myanmar, India, South Africa, Namibia, Morocco, eventually landing in England. Hands-on learning experience regarding the geopolitical structure of the world, its history, and individual behaviors. While on board, took university credit courses studying Human Rights and Global Ethics, Politics of Developing Areas, Global Environmental Politics, and the New Scramble for Africa.</p>
+                  <p><a href="https://www.semesteratsea.org/" class="underline-yellow"><span class="bold">[2015] SEMESTER AT SEA. INSTITUTE OF SHIPBOARD EDUCATION- UNIVERSITY OF VIRGINA. MV EXPLORER</span></a> Studied abroad living on a ship for four months which boarded in San Diego, California and visited Hawaii, Japan, China, Hong Kong, Vietnam, Cambodia, Singapore, Myanmar, India, South Africa, Namibia, Morocco, eventually landing in England. Hands-on learning experience regarding the geopolitical structure of the world, its history, and individual behaviors. While on board, took university credit courses studying Human Rights and Global Ethics, Politics of Developing Areas, Global Environmental Politics, and the New Scramble for Africa.</p>
                 </div>
               </div>
-
             </li>
 
             <li>
@@ -181,15 +179,17 @@
     <script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,fetch"></script>
     <script type="text/javascript">
 
-      var cities = ['Panama City', 'Managua', 'New York'];
+      const cities = ['Panama City, Panama','Valle de Anton, Panama','Coronado, Panama','David City, Panama','Boquete, Panama','Volcan City, Panama','Santiago City, Panama','Chitre City, Panama','Colon City, Panama','San Blas Islands, Panama','Isla Colon, Bocas del Toro, Panama','Venao Beach, Panama','Pedasi, Panama', 'Managua, Nicaragua', 'Granada, Nicaragua','Bethlahem, Palestine', 'Jericho, Palestine', 'Dead Sea, Palestine', 'Tel Aviv, Israel', 'Jerusalem, Israel', 'Marrakech Airport, Morocco', 'Casablanca Airport, Morocco', 'Swakopmond, Namibia', 'Namib Desert, Namibia', 'Cape Town, South Africa', 'Port Louis, Mauritius', 'Agra Fort, India','New Delhi, India','Jaipur Fort, India', 'Cochin, India', 'Rangoon, Myanmar', 'Bagan, Myanmar', 'Nusa Penida, Indonesia', 'Bali, Indonesia', 'Kyaiktiyo Pagoda, Myanmar', 'Singapore', 'Siem Reap, Cambodia', 'Ho Chi Minh, Vietnam', 'Shanghai Airport, China', 'Beijing, China','Yangshuo, China','Guillin, China','Hong Kong', 'Tokyo Airport, Japan', 'Kyoto Airport, Japan', 'Osaka Castle, Japan', 'Yokohama Port, Japan', 'Kobe Port Tower, Japan', 'Luxembourg City, Luxembourg', 'Dublin, Ireland', 'Vienna, Austria', 'London, United Kingdom', 'Berlin, Germany', 'Munich, Germany', 'Leipzig, Germany', 'Frankfurt, Germany', 'Hamburg, Germany', 'Bruges, Brussels', 'Brussels, Belgium', 'Stockholm, Sweden', 'Amsterdam, Holland', 'Utrecht, Holland', 'Copenhagen, Denmark', 'Paris, France', 'Lyon, France', 'Annecy, France', 'Ferney-Voltaire, France', 'Annemasse, France', 'Chamonix, France', 'Gex, France', 'Madrid, Spain', 'Barcelona, Spain', 'Florence, Italy','Rome, Italy', 'Cinque Terre, Italy', 'Venice, Italy', 'Verona, Italy', 'Geneva, Switzerland', 'Nyon, Switzerland', 'Lausanne, Switzerland', 'Montreaux, Switzerland', 'Bern, Switzerland', 'Zurich, Switzerland', 'Interlaken, Switzerland', 'Luzern, Switzerland', 'Hawaii, USA', 'South Bend, USA', 'Puerto Rico','Chicago, USA', 'Miami Florida, USA', 'New York City, USA', 'Washington DC, USA','Wisconsin, USA','Boulder, USA','Denver, USA','Snowmass, USA', 'San Francisco, USA', 'Dallas, USA', 'Fort Worth, USA','Philadelphia City, USA', 'Phoenix, USA', 'Tampa, USA', 'Houston, Texas', 'Mexico DF City, Mexico','Guadalajara City, Mexico','Puerto Vallarta Beach, Mexico', 'Quito City, Ecuador', 'Salento, Colombia', 'Bogota, Colombia', 'Medellin, Colombia', 'Cartagena, Colombia', 'San Martin de los Andes City, Argentina', 'Bariloche City, Argentina', 'Buenos Aires, Argentina', 'San Pedro Sula, Honduras', 'Roatan, Honduras', 'Utila, Honduras', 'Tela, Honduras', 'Jaco, Costa rica', 'San Jose, Costa Rica'];
+
 
       var locations = []
       cities.forEach ((city) => {
-        fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${city}+CA&key=AIzaSyAnamOo_bH6xklu7-AEhNEetofSde-wyo8`)
+        fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${city}+CA&key=AIzaSyDyANloKjZR5KpD3Lt4R366_MppoMK9w2s`)
         .then(response => response.json())
         .then((data) => {
+          const loc = [ city, data.results[0].geometry.location.lat, data.results[0].geometry.location.lng ]
           locations.push([ city, data.results[0].geometry.location.lat, data.results[0].geometry.location.lng ])
-          return locations
+          addMarkerToMap(loc);
         });
       })
 
@@ -201,28 +201,22 @@
 
       var infowindow = new google.maps.InfoWindow();
 
-
-      // var marker, i;
-
-      var latest = locations.length - 1;
       console.log(locations);
-      console.log(locations.length);
-      console.log(latest);
-      for (var i = 0; i <= latest; i++) {
-        console.log(locations);
+      const addMarkerToMap = (loc) => {
         var marker = new google.maps.Marker({
-          position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+          position: new google.maps.LatLng(loc[1], loc[2]),
           map: map
         });
 
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
           return function() {
-            infowindow.setContent(locations[i][0]);
+            infowindow.setContent(`<div>${loc[0]}</div>`);
             infowindow.open(map, marker);
           }
         })(marker, i));
       }
-    </script><!--  <script type="text/javascript">
+    </script>
+    <!--  <script type="text/javascript">
       var locations = [
         ['Bondi Beach', -33.890542, 151.274856, 4],
         ['Coogee Beach', -33.923036, 151.259052, 5],
