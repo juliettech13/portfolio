@@ -185,7 +185,7 @@ ul {
     }
     .heavy{
       h1{
-        font-size: 50px
+        font-size: 40px
       }
     }
     .contact-me .heavy {
@@ -257,7 +257,7 @@ and (max-device-width : 736px) {
       margin: 0 auto;
     }
 }
-@media only screen and (max-width: 1440px) {
+@media only screen and (min-width: 1440px) {
  .paragraphs{
     p{
       font-size: 13px;
