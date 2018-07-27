@@ -1,5 +1,6 @@
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
+activate :dotenv
 
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
@@ -52,3 +53,11 @@ set :relative_links, true
 #   activate :minify_css
 #   activate :minify_javascript
 # end
+
+configure :development do
+  activate :dotenv, env: '.env.development'
+end
+
+configure :build do
+  activate :dotenv, env: '.env.build'
+end

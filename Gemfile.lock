@@ -252,6 +252,9 @@ GEM
       servolux
       tilt (~> 2.0)
       uglifier (~> 3.0)
+    middleman-dotenv (2.0.0)
+      dotenv (>= 2.0)
+      middleman-core (>= 4.0)
     middleman-gh-pages (0.3.1)
       rake (> 0.9.3)
     mini_portile2 (2.3.0)
@@ -315,6 +318,7 @@ DEPENDENCIES
   middleman (~> 4.2)
   middleman-autoprefixer (~> 2.7)
   middleman-deploy!
+  middleman-dotenv (~> 2.0)
   middleman-gh-pages
   tzinfo-data
   wdm (~> 0.1)
