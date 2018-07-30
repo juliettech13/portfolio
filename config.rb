@@ -54,10 +54,10 @@ set :relative_links, true
 #   activate :minify_javascript
 # end
 
-configure :development do
-  activate :dotenv, env: '.env.development'
-end
+# configure :development do
+#   activate :dotenv, env: '.env.development'
+# end
 
-configure :build do
-  activate :dotenv, env: '.env.build'
-end
+# configure :build do
+#   activate :dotenv, env: '.env.build'
+# end

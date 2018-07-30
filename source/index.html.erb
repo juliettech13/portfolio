@@ -126,6 +126,38 @@
             </li>
 
             <li>
+              <button onclick="scrollDown('MusicSection')" class="section-title">
+                <h3>MUSIC<span class="period">.   +</span></h3>
+              </button>
+              <div id="MusicSection" class="sections w3-hide">
+                <div class="playlists">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-4">
+                        <div class="playlist">
+                          <h2>for writing 📝</h2>
+                          <iframe src="https://open.spotify.com/embed/user/1246040458/playlist/6WS7P0gHZnAiy34Ko45bFU" width="240" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-4">
+                        <div class="playlist">
+                          <h2>for coding 👩🏻‍💻</h2>
+                          <iframe src="https://open.spotify.com/embed/user/1246040458/playlist/4mMQ2tMFtVTxhAY78mOogl" width="240" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-4">
+                        <div class="playlist">
+                          <h2>for chilling 🧜🏻‍♀️</h2>
+                          <iframe src="https://open.spotify.com/embed/user/1246040458/playlist/29FN1CtAxG9kcCF5mCNr2S" width="240" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li>
               <button onclick="scrollDown('TravelSection')" class="section-title">
                 <h3>TRAVEL<span class="period">.   +</span></h3>
               </button>
@@ -134,6 +166,7 @@
                 <div id="map"></div>
               </div>
             </li>
+
 
           </ul>
 
@@ -172,7 +205,7 @@
 
       var locations = []
       cities.forEach ((city) => {
-        fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${city}+CA&key=AIzaSyDyANloKjZR5KpD3Lt4R366_MppoMK9w2s`)
+        fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${city}+CA&key=${ENV['GOOGLE_API_SERVER_KEY']}`)
         .then(response => response.json())
         .then((data) => {
           const loc = [ city, data.results[0].geometry.location.lat, data.results[0].geometry.location.lng ]
