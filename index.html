@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
   <!-- <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script> -->
    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyDyANloKjZR5KpD3Lt4R366_MppoMK9w2s"></script>
+
     <link href="stylesheets/site.css" rel="stylesheet" />
     <script src="javascripts/site.js"></script>
   </head>
@@ -113,6 +114,7 @@
                 </div>
               </div>
             </li>
+
             <li>
               <button onclick="scrollDown('PublicationsSection')" class="section-title">
                 <h3>PUBLICATIONS<span class="period">.   +</span></h3>
@@ -218,10 +220,12 @@
 
       const cities = ['Panama City, Panama','Valle de Anton, Panama','Coronado, Panama','David City, Panama','Boquete, Panama','Volcan City, Panama','Santiago City, Panama','Chitre City, Panama','Colon City, Panama','San Blas Islands, Panama','Isla Colon, Bocas del Toro, Panama','Venao Beach, Panama','Pedasi, Panama', 'Managua, Nicaragua', 'Granada, Nicaragua','Bethlahem, Palestine', 'Jericho, Palestine', 'Dead Sea, Palestine', 'Tel Aviv, Israel', 'Jerusalem, Israel', 'Marrakech Airport, Morocco', 'Casablanca Airport, Morocco', 'Swakopmond, Namibia', 'Namib Desert, Namibia', 'Cape Town, South Africa', 'Port Louis, Mauritius', 'Agra Fort, India','New Delhi, India','Jaipur Fort, India', 'Cochin, India', 'Rangoon, Myanmar', 'Bagan, Myanmar', 'Nusa Penida, Indonesia', 'Bali, Indonesia', 'Kyaiktiyo Pagoda, Myanmar', 'Singapore', 'Siem Reap, Cambodia', 'Ho Chi Minh, Vietnam', 'Shanghai Airport, China', 'Beijing, China','Yangshuo, China','Guillin, China','Hong Kong', 'Tokyo Airport, Japan', 'Kyoto Airport, Japan', 'Osaka Castle, Japan', 'Yokohama Port, Japan', 'Kobe Port Tower, Japan', 'Luxembourg City, Luxembourg', 'Dublin, Ireland', 'Vienna, Austria', 'London, United Kingdom', 'Berlin, Germany', 'Munich, Germany', 'Leipzig, Germany', 'Frankfurt, Germany', 'Hamburg, Germany', 'Bruges, Brussels', 'Brussels, Belgium', 'Stockholm, Sweden', 'Amsterdam, Holland', 'Utrecht, Holland', 'Copenhagen, Denmark', 'Paris, France', 'Lyon, France', 'Annecy, France', 'Ferney-Voltaire, France', 'Annemasse, France', 'Chamonix, France', 'Gex, France', 'Madrid, Spain', 'Barcelona, Spain', 'Florence, Italy','Rome, Italy', 'Cinque Terre, Italy', 'Venice, Italy', 'Verona, Italy', 'Geneva, Switzerland', 'Nyon, Switzerland', 'Lausanne, Switzerland', 'Montreaux, Switzerland', 'Bern, Switzerland', 'Zurich, Switzerland', 'Interlaken, Switzerland', 'Luzern, Switzerland', 'Hawaii, USA', 'South Bend, USA', 'Puerto Rico','Chicago, USA', 'Miami Florida, USA', 'New York City, USA', 'Washington DC, USA','Wisconsin, USA','Boulder, USA','Denver, USA','Snowmass, USA', 'San Francisco, USA', 'Dallas, USA', 'Fort Worth, USA','Philadelphia City, USA', 'Phoenix, USA', 'Tampa, USA', 'Houston, Texas', 'Mexico DF City, Mexico','Guadalajara City, Mexico','Puerto Vallarta Beach, Mexico', 'Quito City, Ecuador', 'Salento, Colombia', 'Bogota, Colombia', 'Medellin, Colombia', 'Cartagena, Colombia', 'San Martin de los Andes City, Argentina', 'Bariloche City, Argentina', 'Buenos Aires, Argentina', 'San Pedro Sula, Honduras', 'Roatan, Honduras', 'Utila, Honduras', 'Tela, Honduras', 'Jaco, Costa rica', 'San Jose, Costa Rica'];
 
+      // var envKey = Dotenv.load;
+      // console.log(envKey)
 
       var locations = []
       cities.forEach ((city) => {
-        fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${city}+CA&key=${ENV['GOOGLE_API_SERVER_KEY']}`)
+        fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${city}+CA&key=AIzaSyDyANloKjZR5KpD3Lt4R366_MppoMK9w2s`)
         .then(response => response.json())
         .then((data) => {
           const loc = [ city, data.results[0].geometry.location.lat, data.results[0].geometry.location.lng ]
